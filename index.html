@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Youchat</title>
+  <link rel="icon" href="/assets/favicon.png">
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="media.query/media.query.main.css">
+  <script src="media.query/media.query.main.js" defer></script>
+  <!---------------------------------------------------------icons link------------------------------------------------------------------------->
+  <script src="https://kit.fontawesome.com/809920df63.js" crossorigin="anonymous"></script>
+  <!---------------------------------------------------------fonts link------------------------------------------------------------------>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Merriweather:ital@1&family=Nanum+Gothic&family=Radio+Canada&family=Roboto+Mono&display=swap"
+    rel="stylesheet">
+  <!---------------------------------------------------------end------------------------------------------------------------------>
+</head>
+
+<body id="body">
+  <div id="loader">
+  </div>
+  <div class="big-wrapper light" id="wrapper">
+
+    <div class="navbar" id="nav">
+      <div class="logo">
+        <img src="/assets/logo.png">
+        <h3>YouChat</h3>
+      </div>
+      <div class="links">
+
+        <ul id="ul">
+
+          <li><a href="contact.html">Contact</a> </li>
+          <li><a href="settings.html">Settings</a> </li>
+          <li><a onclick="logout()">Logout</a> </li>
+          <button class="btn">
+            <i class="fa-solid fa-moon" onclick="dark()" id="moon-i"></i>
+            <i class="fa-solid fa-sun" style="display:none;" onclick="light()" id="sun-i"></i>
+          </button>
+        </ul>
+      </div>
+      <div class="burger">
+        <i class="fa-solid fa-bars" id="open" onclick="opens()"></i>
+        <i class="fa-solid fa-close" id="close" onclick="closes()"></i>
+      </div>
+    </div>
+    <div class="toast error" id="error">
+      <div class="container-1">
+        <i class="fas fa-times-circle"></i>
+      </div>
+      <div class="container-2">
+        <p>Error</p>
+        <p id="sub-error">Error please fill all the fields</p>
+      </div>
+      <button onclick="close2()">&times</button>
+    </div>
+    <div class="main">
+      <div class="main-sub">
+        <div class="uni-name-div" id="div">
+          <div class="title">
+            <span class="i-bg">
+              <i class="fa-solid fa-user"></i>
+            </span>
+            <span>Set Nickname</span>
+            <p>Hey! Set a nick name before you start chatting so that we can show a nickname instead of your email.
+              Just don't set your real name.
+            </p>
+          </div>
+          <input type="text" placeholder="Nickname">
+          <button>Set</button>
+        </div>
+        <div class="uni-create-div" id="div">
+          <div class="title">
+            <span class="i-bg2">
+              <i class="fa-solid fa-user"></i>
+            </span>
+            <span>Create A Room</span>
+            <p>
+              Create your own room. It's easy just type a room name and click on the button below.
+              Any user can join this room and message
+            </p>
+          </div>
+          <input type="text" placeholder="Room name" id="int-room">
+          <button onclick="create()">Create</button>
+        </div>
+      </div>
+      <div class="main-sub">
+        <div class="uni-join-div" id="div">
+          <div class="title">
+            <span class="i-bg3">
+              <i class="fa-solid fa-user-group"></i>
+            </span>
+            <span>Join A Room</span>
+            <p>Want to join a room created before? Select the room name from the dropwown below and click "Join" Button
+            </p>
+          </div>
+          <div class="drop-wrapper" id="wrapper-se">
+            <div class="select-btn" id="btn-se">
+              <h2>Select Room</h2>
+              <i class="fa-solid fa-angle-down"></i>
+            </div>
+            <div class="content">
+              <ul>
+                <li>Hola</li>
+                <li>Hola</li>
+                <li>Hola</li>
+                <li>Hola</li>
+              </ul>
+            </div>
+          </div>
+          <button onclick="join()">Join</button>
+        </div>
+      </div>
+
+    </div>
+  </div>
+  <div class="footer">
+    <p>Youchat &copy 2022 - All Rights Reserved</p>
+  </div>
+  <script src="main.js">
+
+  </script>
+  <script>
+
+  </script>
+</body>
+
+</html>

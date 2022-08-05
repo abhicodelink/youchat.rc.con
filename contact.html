@@ -1,0 +1,127 @@
+<!DOCTYPE html> 
+<html>
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Youchat | Contact</title>
+  <link rel="icon" href="/assets/favicon.png">
+  <link rel="stylesheet" href="contact.css">
+  <script src="contact.js"></script>
+  <link rel="stylesheet" href="media.query/media.query.contact.css">
+  <script src="media.query/media.query.contact.js" defer></script>
+  <!------------------------------------------email_handler0------------------------->
+<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+  <!---------------------------------------------------------icons link------------------------------------------------------------------------->
+ <script src="https://kit.fontawesome.com/809920df63.js" crossorigin="anonymous"></script>
+ <!---------------------------------------------------------fonts link------------------------------------------------------------------>
+ <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Merriweather:ital@1&family=Nanum+Gothic&family=Poppins&family=Radio+Canada&family=Roboto+Mono&family=Source+Sans+Pro&display=swap" rel="stylesheet">
+<!---------------------------------------------------------end------------------------------------------------------------------>
+</head>
+<body id="body">
+  <div id="loader">
+  </div>
+  <main>
+    <div class="big-wrapper light" id="wrapper">
+      <header>
+        <div class="container">
+          <div class="logo">
+            <img src="/assets/logo.png" alt="Logo" href="index.html" />
+            <h3> Youchat</h3>
+          </div>
+
+          <div class="links">
+            <ul>
+              <li><a href="index.html" id="link">Home</a></li>
+              <li><a href="contact.html" id="link2"  class="activer">Contact</a></li>
+              <li><a href="settings.html" id="link3">Settings</a></li>
+              <li><a href="#" class="btn">Logout</a></li>
+            </ul>
+          </div>
+
+          <div class="overlay"></div>
+
+          <div class="hamburger-menu">
+            <div class="bar"></div>
+          </div>
+        </div>
+      </header>
+      <hr>
+      <div class="showcase">
+     <div class="conainer">
+      <div class="left column">
+        <div class="big-title">
+          <h1>Contact Us</h1>
+          <p>Youchat welcomes your messages and querys</p>
+        </div>
+        <div class="box" onclick="address()" >
+<i class="fa fa-map-marker"></i>
+<p>Colaba, Mumbai, Marahastra</p>
+        </div>
+        <div class="box"  onclick="mail()">
+          <i class="fa-solid fa-envelope"></i>
+          <p>youchat@crew.com</p>
+                  </div>
+                  <div class="box" onclick="tel()">
+                    <i class="fa fa-phone"></i>
+                    <p>+91 - 0123456789</p>
+                            </div>
+      </div>
+      <div class="right">
+  
+<div class="big-title">
+  <p> Or send us a form by filling all these fields</p>
+</div>
+<div class="column">
+  <label>Name*</label>
+  <input type="text" class="int" id="name">
+</div>
+<div class="column ol">
+  <label>Email*</label>
+  <input type="text" class="int" id="mail">
+</div>
+<div class="column ol">
+  <label>Subject*</label>
+  <input type="text" class="int" id="sub">
+</div>
+<div class="column ol">
+  <label>Message*</label>
+  <textarea class="int" id="text"></textarea>
+</div>
+  <button class="btns" onclick="send()">Send</button>
+      </div>
+     </div>
+     </div>
+     </div>
+     </main>
+     <div class="head-error" id="error">
+      <div class="error">
+        <div class="erro">
+        <h3>Error</h3>
+<button  onclick="slose()">&times;</button>
+</div>
+<div class="err">
+  <p id="text-er">Please fill al the fields in order to send yoyyur form</p>
+</div>
+      </div>
+      </div>
+      <div class="modal" id="mod">
+        <div class="popup">
+  <div class="head">
+    <button onclick="slose2()">&times;</button>
+    </div>
+    <div class="pop-body">
+      <center>
+      <div class="round-box">
+        <i class="fa fa-check"></i>
+      </div>
+      <div class="big-titles">
+      <p>Thanks  <label id="name-holder"> </label>  for contacting us we will send a mail to your given email address  <label id="email-holder"></label>  after our staff reads your form</p>
+      </div>
+      <button class="pop-btn" onclick="con()">Continue  	&#8594</button>
+      </center>
+    </div>
+        </div>
+      </div>
+</body>
+</html>

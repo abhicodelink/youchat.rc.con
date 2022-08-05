@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Youchat | Settings</title>
+  <link rel="icon" href="/assets/favicon.png">
+  <link rel="stylesheet" href="settings.css">
+<link rel="stylesheet" href="media.query/media.query.settings.css">
+
+  <script src="media.query/media.query.settings.js" defer></script>
+    <!-------------------------------------------------------------firebase link------------------------------------------------------->
+    <script src="https://www.gstatic.com/firebasejs/7.15.5/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.15.5/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.15.5/firebase-database.js"></script> 
+  <!---------------------------------------------------------icons link------------------------------------------------------------------------->
+  <script src="https://kit.fontawesome.com/809920df63.js" crossorigin="anonymous"></script>
+  <!---------------------------------------------------------fonts link------------------------------------------------------------------>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Merriweather:ital@1&family=Nanum+Gothic&family=Poppins&family=Radio+Canada&family=Roboto+Mono&family=Source+Sans+Pro&display=swap" rel="stylesheet">
+  <!---------------------------------------------------------end------------------------------------------------------------------>
+</head>
+
+<body id="body">
+  <div id="loader">
+  </div>
+  <main>
+    <div class="big-wrapper light" id="wrapper">
+      <header>
+        <div class="container">
+          <div class="logo">
+            <img src="/assets/logo.png" alt="Logo" href="index.html" />
+            <h3> Youchat</h3>
+          </div>
+
+          <div class="links">
+            <ul>
+              <li><a href="index.html" id="link">Home</a></li>
+              <li><a href="contact.html" id="link2">Contact</a></li>
+              <li><a href="settings.html" id="link3" class="activer">Settings</a></li>
+              <li><a href="#" class="btn">Logout</a></li>
+            </ul>
+          </div>
+
+          <div class="overlay"></div>
+
+          <div class="hamburger-menu">
+            <div class="bar"></div>
+          </div>
+        </div>
+      </header>
+      <hr>
+      <div class="showcase-area">
+        <button class="toggle" id="toggle" onclick="change()">
+ <i class="fa-solid fa-moon" id="moon"></i>
+ <i class="fa-solid  fa-sun" id="sun"></i>
+        </button>
+        <div class="container">
+
+          <div class="right">
+            <div class="card">
+              <div class="left">
+<img src="/assets/waving-hand.png">
+              <h1>Hi there, </h1>
+              <h1 id="name-holder"></h1>
+              </div>
+              <div class="rights">
+                <h4>Thank for using Youchat since 2022</h4>
+              </div>
+            </div>
+            <div class="card-sub">
+              <div class="lefts col">
+                <i class="fa-solid fa-envelope"></i>
+                <p id="email-holder">abhinas.crew.suppot.youchat@gmail.info.com</p>
+              </div>
+            </div>
+            <div class="main">
+              <div class="column">
+                <h2><i class="fa-solid fa-user"></i> Nickname</h2>
+                <p>Set a nickname so that next time you chat we can show this nickname other than your email</p>
+            <div class="row cols">
+               <input type="text" class="int" id="int-nick" placeholder="Nickname">
+                <button type="button" class="btns" onclick="set()">Set</button>
+              </div>
+              </div>
+              <div class="column" style="margin-top:50px;">
+                <h2> <i class="fa-solid fa-square-envelope"></i> Change Your Email</h2>
+                <div class="row col">
+                  <input type="text" class="int" placeholder="New Email" id="int-new">
+              <input type="text" class="int" placeholder="Confirm Email" id="int-con">
+                </div>
+                <button class="btns" id="btn2" onclick="change_email()">Change email</button>
+              </div>
+              <div class="column" style="margin-top:50px;">
+                <h2> <i class="fa-solid fa-lock"></i>   Change Password</h2>
+                <div class="row col">
+                <input type="text" class="int" placeholder="New Password" id="new-pass">
+                <input type="text" class="int" placeholder="Confirm Password" id="con-pass">
+              </div>
+                <button class="btns" id="btn3" onclick="change_pass()">Change password</button>
+              </div>
+              <div class="zone">
+                <h3><i class="fa-solid fa-jet-fighter"></i>  Entering Danger Zone</h3>
+              </div>
+              <div class="column" style="margin-top:20px;">
+                <h2>Delete Your Account</h2>
+                <p> <i class="fa-solid fa-exclamation"></i> You won't be able to retrive your account once you delete it
+                </p>
+                <button type="button" class="del-btn" onclick="del()">Delete Account</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="modal" id="mod">
+        <div class="popup" id="up">
+        <div class="header">
+          <h2 class="headers"></h2>
+          <button type="button" class="close-btn" onclick="closes()">
+            &times
+          </button>
+        </div>
+        <hr>
+        <div class="text">
+          <p>Please give your acount email and password below in order to 
+            <p class="textarea"> </p></p>
+          </p>
+        </div>
+        <div class="modal-body">
+  <input type="text" class="int-modal" placeholder="Email" id="int-email">
+  <input type="text" class="int-modal" placeholder="Password" id="int-pass">
+  <button type="button" class="sub-btn" onclick="submit(reason)">
+    Continue
+  </button>
+  <button type="button" class="can-btn" onclick="closes()">
+    Cancel
+  </button>
+       </div>
+        </div>
+      </div>
+      <div class="modal2" id="mod2">
+        <div class="popup2" id="up2">
+          <div class="header2">
+            <button class="close-btn2"onclick="closes2()">&times;</button>
+          </div>
+          <div class="modal2-body">
+            <center>
+            <div class="img">
+              <i class="fa-solid fa-exclamation"></i>
+            </div>
+            </center>
+            <h2>Are you sure?</h2>
+            <p>Are you sure you want to delete your account? You can not undo it</p>
+            <div class="btn-holder">
+              <button type="button" class="btn1" onclick="deletes()">Delete</button>
+              <button type="button" class="btn2" onclick="closes2()">Cancel</button>
+            </div> 
+          </div>
+        </div>
+      </div>
+      <div class="pop-error">
+        <div class="container">
+          <div class="errorhead">
+            <h4>Error</h4>
+            <button class="close-error-btn" onclick="ogk()">&times;</button>
+          </div>
+          <div class="body">
+            <p>Pleas fill  all the fields to change you email</p>
+          </div>
+        </div>
+      </div>
+</div>
+      </div>
+      </main>
+      <script src="settings.js">
+      
+      </script>
+</body>
+</html>
